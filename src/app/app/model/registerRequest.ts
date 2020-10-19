@@ -2,7 +2,7 @@ export interface RegisterRequest {
   name: string;
   address?: string;
   cardId: string;
-  doB: string;
+  doB: any;
   typeClass: string;
   payment?: number;
 }
