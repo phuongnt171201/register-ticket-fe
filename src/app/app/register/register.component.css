@@ -1,0 +1,13 @@
+span {
+  color: red;
+}
+
+.error{
+  color: red;
+}
+
+.notification{
+  position: fixed;
+  top: 0;
+  right: 0;
+}
