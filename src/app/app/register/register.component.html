@@ -1,37 +1,40 @@
-<div>
-    <p class="notification" *ngIf="alert.show">
-      <ngb-alertng [type]="alert.type" (close)="close(alert)"><strong>{{alert.title}}</strong>  {{ alert.message }}</ngb-alertng>
-    </p>
-  <!--  <div class="container d-flex justify-content-center align-items-center">-->
-  <!--    <div class="col-md-4">-->
-  <!--      <div class="card card-login card-plain" id="inform">-->
+<div class="container">
+
+  <h1>Book A Ticket</h1>
+  <hr>
+  <p class="notification" *ngIf="alert.show">
+    <ngb-alertng [type]="alert.type" (close)="close(alert)"><strong>{{alert.title}}</strong> {{ alert.message }}</ngb-alertng>
+  </p>
+  <!-- <div class="container d-flex justify-content-center align-items-center">-->
+  <!-- <div class="col-md-4">-->
+  <!-- <div class="card card-login card-plain" id="inform">-->
   <form [formGroup]="registerForm" class="form" (ngSubmit)="onSubmit()">
 
     <div class="input-field">
-      <p>Name<span>*</span></p>
+      <label>Name<span>*</span></label>
       <input formControlName="name" type="text" class="form-control">
     </div>
     <div class="error" role="alert"
          *ngIf="registerForm.get('name').errors && (registerForm.get('name').dirty || registerForm.get('name').touched)">
       <p *ngIf="registerForm.get('name').errors?.required">Required username</p>
-      <!--              <p *ngIf="registerForm.get('name').errors?.pattern">Invalid username</p>-->
+      <!-- <p *ngIf="registerForm.get('name').errors?.pattern">Invalid username</p>-->
     </div>
     <div class="input-field">
-      <p>Address</p>
+      <label>Address</label>
       <input formControlName="address" type="text" class="form-control">
     </div>
     <div class="input-field">
-      <p>Card ID<span>*</span></p>
+      <label>Card ID<span>*</span></label>
       <input formControlName="cardId" type="text" class="form-control">
     </div>
     <div class="error" role="alert"
          *ngIf="registerForm.get('cardId').errors && (registerForm.get('cardId').dirty || registerForm.get('cardId').touched)">
       <p *ngIf="registerForm.get('cardId').errors?.required">Required card ID</p>
-      <!--              <p *ngIf="registerForm.get('name').errors?.pattern">Invalid username</p>-->
+      <!-- <p *ngIf="registerForm.get('name').errors?.pattern">Invalid username</p>-->
     </div>
     <div class="input-field">
-      <p>Date of Birth<span>*</span></p>
-<!--      <input formControlName="doB" type="text" class="form-control">-->
+      <label>Date of Birth<span>*</span></label>
+      <!-- <input formControlName="doB" type="text" class="form-control">-->
       <dp-date-picker formControlName="doB" class="form-control"></dp-date-picker>
 
     </div>
@@ -39,10 +42,11 @@
          *ngIf="registerForm.get('doB').errors && (registerForm.get('doB').dirty || registerForm.get('doB').touched)">
       <p *ngIf="registerForm.get('doB').errors?.required">Required Date of Birth</p>
 
-      <!--              <p *ngIf="registerForm.get('name').errors?.pattern">Invalid username</p>-->
+      <!-- <p *ngIf="registerForm.get('name').errors?.pattern">Invalid username</p>-->
     </div>
+    <br>
     <div class="input-field">
-      <p>Type of Class<span>*</span></p>
+      <label>Type of Class<span>*</span></label>
       <select formControlName="typeClass" class="form-control">
         <option>Ticket 3D</option>
         <option>Ticket 2D</option>
@@ -50,52 +54,50 @@
     </div>
 
     <div class="input-field">
-      <p>Payment</p>
+      <label>Payment</label>
       <input formControlName="payment" type="text" class="form-control">
     </div>
     <div class="error" role="alert"
          *ngIf="registerForm.get('payment').errors && (registerForm.get('payment').dirty || registerForm.get('payment').touched)">
       <p *ngIf="registerForm.get('payment').errors?.pattern">Payment only number</p>
-      <!--              <p *ngIf="registerForm.get('name').errors?.pattern">Invalid username</p>-->
+      <!-- <p *ngIf="registerForm.get('name').errors?.pattern">Invalid username</p>-->
     </div>
 
     <!--<div class="form-group">-->
-    <!--  <p>Roles</p>-->
-    <!--  <div class="input-group">-->
-    <!--    <div class="form-check form-check-inline">-->
-    <!--      <label class="form-check-label">-->
-    <!--        <input formControlName="roleUser" class="form-check-input" type="checkbox">-->
-    <!--        <span class="form-check-sign"></span>-->
-    <!--        User-->
-    <!--      </label>-->
-    <!--    </div>-->
-    <!--    <div class="form-check form-check-inline">-->
-    <!--      <label class="form-check-label">-->
-    <!--        <input formControlName="roleModerator" class="form-check-input" type="checkbox">-->
-    <!--        <span class="form-check-sign"></span>-->
-    <!--        Moderator-->
-    <!--      </label>-->
-    <!--    </div>-->
-    <!--    <div class="form-check form-check-inline">-->
-    <!--      <label class="form-check-label">-->
-    <!--        <input formControlName="roleAdmin" class="form-check-input" type="checkbox">-->
-    <!--        <span class="form-check-sign"></span>-->
-    <!--        Admin-->
-    <!--      </label>-->
-    <!--    </div>-->
-    <!--  </div>-->
+    <!-- <p>Roles</p>-->
+    <!-- <div class="input-group">-->
+    <!-- <div class="form-check form-check-inline">-->
+    <!-- <label class="form-check-label">-->
+    <!-- <input formControlName="roleUser" class="form-check-input" type="checkbox">-->
+    <!-- <span class="form-check-sign"></span>-->
+    <!-- User-->
+    <!-- </label>-->
+    <!-- </div>-->
+    <!-- <div class="form-check form-check-inline">-->
+    <!-- <label class="form-check-label">-->
+    <!-- <input formControlName="roleModerator" class="form-check-input" type="checkbox">-->
+    <!-- <span class="form-check-sign"></span>-->
+    <!-- Moderator-->
+    <!-- </label>-->
+    <!-- </div>-->
+    <!-- <div class="form-check form-check-inline">-->
+    <!-- <label class="form-check-label">-->
+    <!-- <input formControlName="roleAdmin" class="form-check-input" type="checkbox">-->
+    <!-- <span class="form-check-sign"></span>-->
+    <!-- Admin-->
+    <!-- </label>-->
+    <!-- </div>-->
+    <!-- </div>-->
 
 
 
     <div class="footer text-center">
       <button type="submit"
-              class="btn">Save
+              class="btn" id="btn">Save
       </button>
     </div>
   </form>
-  <!--      </div>-->
-  <!--    </div>-->
-  <!--  </div>-->
+  <!-- </div>-->
+  <!-- </div>-->
+  <!-- </div>-->
 </div>
-
-
